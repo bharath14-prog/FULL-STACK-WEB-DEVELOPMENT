@@ -1,0 +1,105 @@
+
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Twitter Clone</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #e6ecf0;
+        }
+
+        .container {
+            width: 600px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: #ffffff;
+            border-radius: 5px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        header {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        .tweet-input {
+            display: flex;
+            flex-direction: column;
+        }
+
+        textarea {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            resize: none;
+        }
+
+        button {
+            margin-top: 10px;
+            padding: 10px;
+            background-color: #1da1f2;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color: #0d95e8;
+        }
+
+        .tweet-feed {
+            margin-top: 20px;
+        }
+
+        .tweet {
+            background-color: #f5f8fa;
+            padding: 10px;
+            border-radius: 5px;
+            margin-bottom: 10px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Twitter Clone</h1>
+        </header>
+        <main>
+            <div class="tweet-input">
+                <textarea id="tweetContent" placeholder="What's happening?" rows="4"></textarea>
+                <button id="tweetButton">Tweet</button>
+            </div>
+            <div id="tweetFeed" class="tweet-feed"></div>
+        </main>
+    </div>
+    <script>
+        document.getElementById('tweetButton').addEventListener('click', function() {
+            const tweetContent = document.getElementById('tweetContent').value.trim();
+            if (tweetContent) {
+                const tweetFeed = document.getElementById('tweetFeed');
+                const tweet = document.createElement('div');
+                tweet.classList.add('tweet');
+                tweet.textContent = tweetContent;
+                tweetFeed.prepend(tweet); // Add the new tweet at the top of the feed
+                document.getElementById('tweetContent').value = ''; // Clear the textarea
+            } else {
+                alert('Please enter a tweet before posting.');
+            }
+        });
+    </script>
+</body>
+</html>
+ 
+	
+
+

@@ -1,0 +1,280 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Food Delivery Service</title>
+    <style>
+        /* General Reset */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #f9f9f9;
+            color: #333;
+            line-height: 1.6;
+        }
+
+        /* Header Styling */
+        header {
+            background: linear-gradient(90deg, #ff7e5f, #feb47b);
+            color: white;
+            padding: 20px 0;
+            text-align: center;
+        }
+
+        header h1 {
+            font-size: 2.5em;
+            font-weight: bold;
+            margin-bottom: 10px;
+        }
+
+        nav ul {
+            list-style: none;
+            display: flex;
+            justify-content: center;
+            margin-top: 10px;
+        }
+
+        nav ul li {
+            margin: 0 15px;
+        }
+
+        nav ul li a {
+            color: white;
+            text-decoration: none;
+            font-size: 1.2em;
+            font-weight: bold;
+            padding: 10px 20px;
+            background: #333;
+            border-radius: 50px;
+            transition: background 0.3s;
+        }
+
+        nav ul li a:hover {
+            background: #555;
+        }
+
+        /* Main Section */
+        section {
+            padding: 50px 20px;
+            margin: 20px auto;
+            width: 85%;
+            max-width: 1200px;
+            background-color: white;
+            box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.1);
+            border-radius: 10px;
+        }
+
+        #restaurants {
+            text-align: center;
+        }
+
+        #restaurants h2 {
+            font-size: 2em;
+            color: #ff7e5f;
+            margin-bottom: 30px;
+        }
+
+        .restaurant {
+            background: #ffecd2;
+            padding: 30px;
+            margin-bottom: 30px;
+            border-radius: 10px;
+            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+
+        .restaurant:hover {
+            transform: translateY(-10px);
+            box-shadow: 0px 15px 25px rgba(0, 0, 0, 0.1);
+        }
+
+        .restaurant h3 {
+            font-size: 1.8em;
+            color: #333;
+        }
+
+        .restaurant p {
+            font-size: 1.1em;
+            color: #666;
+            margin: 10px 0 20px;
+        }
+
+        .restaurant button {
+            background-color: #ff7e5f;
+            color: white;
+            padding: 15px 30px;
+            border: none;
+            border-radius: 50px;
+            cursor: pointer;
+            font-size: 1.2em;
+            transition: background 0.3s;
+        }
+
+        .restaurant button:hover {
+            background-color: #feb47b;
+        }
+
+        /* Menu Section */
+        #menu h2 {
+            font-size: 2em;
+            color: #ff7e5f;
+            text-align: center;
+            margin-bottom: 30px;
+        }
+
+        .menu-list ul {
+            list-style: none;
+            padding: 0;
+            text-align: center;
+        }
+
+        .menu-list ul li {
+            padding: 10px 0;
+            font-size: 1.3em;
+            color: #333;
+        }
+
+        .menu-list button {
+            margin-top: 20px;
+            background-color: #333;
+            color: white;
+            padding: 15px 30px;
+            border: none;
+            border-radius: 50px;
+            cursor: pointer;
+            font-size: 1.2em;
+            transition: background 0.3s;
+        }
+
+        .menu-list button:hover {
+            background-color: #555;
+        }
+
+        /* Contact Section */
+        #contact {
+            text-align: center;
+            margin-top: 50px;
+        }
+
+        #contact h2 {
+            font-size: 2em;
+            color: #ff7e5f;
+            margin-bottom: 20px;
+        }
+
+        #contact p {
+            font-size: 1.2em;
+            color: #333;
+            margin: 10px 0;
+        }
+
+        /* Footer Styling */
+        footer {
+            background-color: #333;
+            color: white;
+            text-align: center;
+            padding: 15px 0;
+            margin-top: 50px;
+        }
+
+        footer p {
+            font-size: 1em;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Food Delivery Service</h1>
+        <nav>
+            <ul>
+                <li><a href="#restaurants">Restaurants</a></li>
+                <li><a href="#menu">Menu</a></li>
+                <li><a href="#contact">Contact Us</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section id="restaurants">
+        <h2>Choose a Restaurant</h2>
+        <div class="restaurant">
+            <h3>Italian Bistro</h3>
+            <p>Enjoy classic Italian dishes.</p>
+            <button onclick="openMenu('italian')">Order Now</button>
+        </div>
+        <div class="restaurant">
+            <h3>Indian Spice</h3>
+            <p>Authentic Indian cuisine.</p>
+            <button onclick="openMenu('indian')">Order Now</button>
+        </div>
+        <div class="restaurant">
+            <h3>Chinese Delight</h3>
+            <p>Delicious Chinese food.</p>
+            <button onclick="openMenu('chinese')">Order Now</button>
+        </div>
+    </section>
+
+    <section id="menu">
+        <h2>Menu</h2>
+        <div id="italian" class="menu-list" style="display:none;">
+            <h3>Italian Bistro Menu</h3>
+            <ul>
+                <li>Pizza - $12</li>
+                <img src="c:\Users\User\Downloads\piz.jpg"><br>
+                <li>Pasta - $10</li>
+                <img src="c:\Users\User\Downloads\past.jpg">
+                <li>Tiramisu - $5</li>
+                <img src="c:\Users\User\Downloads\tri.png">
+            </ul>
+            <button onclick="orderFood('Italian Bistro')">Place Order</button>
+        </div>
+        <div id="indian" class="menu-list" style="display:none;">
+            <h3>Indian Spice Menu</h3>
+            <ul>
+                <li>Butter Chicken - $15</li>
+                <li>Paneer Tikka - $12</li>
+                <li>Gulab Jamun - $4</li>
+            </ul>
+            <button onclick="orderFood('Indian Spice')">Place Order</button>
+        </div>
+        <div id="chinese" class="menu-list" style="display:none;">
+            <h3>Chinese Delight Menu</h3>
+            <ul>
+                <li>Fried Rice - $8</li>
+                <li>Spring Rolls - $6</li>
+                <li>Sweet and Sour Pork - $10</li>
+            </ul>
+            <button onclick="orderFood('Chinese Delight')">Place Order</button>
+        </div>
+    </section>
+
+    <section id="contact">
+        <h2>Contact Us</h2>
+        <p>Email: support@fooddelivery.com</p>
+        <p>Phone: 123-456-7890</p>
+    </section>
+
+    <footer>
+        <p>&copy; 2024 Food Delivery Service. All rights reserved.</p>
+    </footer>
+
+    <script>
+        function openMenu(restaurant) {
+            document.querySelectorAll('.menu-list').forEach(menu => {
+                menu.style.display = 'none';
+            });
+            document.getElementById(restaurant).style.display = 'block';
+        }
+
+        function orderFood(restaurant) {
+            alert('Your order from ' + restaurant + ' has been placed successfully!');
+        }
+    </script>
+</body>
+</html>
